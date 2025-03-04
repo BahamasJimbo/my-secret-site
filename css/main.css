@@ -1,25 +1,37 @@
+/* Центрирование всей страницы */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Фон страницы */
+}
+
+/* Контейнер для всего содержимого */
+.container {
+    text-align: center;
+}
+
 /* Стили для прокручиваемого окна */
 .scroll-box {
-    width: 50vw; /* 50% ширины экрана */
-    height: 50vh; /* 50% высоты экрана */
-    max-width: 800px; /* Ограничение максимальной ширины */
-    max-height: 600px; /* Ограничение максимальной высоты */
-    overflow-y: auto; /* Скролл появляется только если нужно */
-    border: 2px solid black; /* Граница */
-    padding: 20px;
-    background-color: white; /* Фон */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Тень для объёма */
-
-    /* Центрирование окна */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 400px; /* Фиксированная ширина */
+    height: 250px; /* Фиксированная высота */
+    overflow-y: auto; /* Включает скролл при необходимости */
+    border: 2px solid black;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    text-align: left; /* Текст выравнивается по левому краю */
+    white-space: pre-wrap; /* Учитывает переносы строк */
+    word-wrap: break-word; /* Авто-перенос длинных слов */
 }
 
 /* Стили для текста внутри */
 .scroll-box p {
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.4;
     color: #333;
+    margin: 0;
 }
