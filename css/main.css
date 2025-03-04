@@ -1,74 +1,80 @@
+/* Сбрасываем box-sizing */
 * {
   box-sizing: border-box;
 }
+
+/* Тело страницы */
 body {
-  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  /* Делаем гибкое центрирование */
+  display: flex;
+  justify-content: center;    /* Горизонтальное выравнивание */
+  align-items: center;        /* Вертикальное выравнивание */
+  min-height: 100vh;          /* Высота на весь экран */
+  font-family: 'Inter', sans-serif;
+  background: #f0f0f0;        /* Можно заменить на любой другой фон */
 }
+
+/* Контейнер из фигмы */
 .v1_9 {
   width: 370px;
   height: 1097px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
+  background: rgba(255, 255, 255, 1);
   position: relative;
-  top: 0px;
-  left: 0px;
   overflow: hidden;
+  /* Убираем абсолютное позиционирование, чтобы центрировалось */
 }
+
+/* Далее — стили из вашей фигмы (можно оставить без изменений) */
 .v1_8 {
   width: 385px;
   height: 100%;
-  background: rgba(8,8,8,1);
+  background: rgba(8, 8, 8, 1);
   opacity: 1;
   position: absolute;
   top: 75px;
   left: 15px;
   overflow: hidden;
 }
+
 .v1_3 {
   width: 229px;
   height: 342px;
-  background: url("../images/v1_3.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url("../images/v1_3.png") no-repeat center/cover;
   opacity: 1;
   position: absolute;
   top: 406px;
   left: 0px;
   overflow: hidden;
 }
+
 .v1_13 {
   width: 294px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 324px;
   left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
+  font-weight: 400;
   font-size: 12px;
-  opacity: 1;
   text-align: left;
 }
+
 .v2_14 {
   width: 190px;
   height: 338px;
-  background: url("../images/v2_14.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url("../images/v2_14.png") no-repeat center/cover;
   opacity: 1;
   position: absolute;
   top: 767px;
   left: 156px;
   overflow: hidden;
 }
+
 .v1_11 {
   width: 316px;
   height: 104px;
-  background: url("../images/v1_11.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url("../images/v1_11.png") no-repeat center/cover;
   opacity: 1;
   position: absolute;
   top: 162px;
@@ -76,19 +82,19 @@ body {
   overflow: hidden;
 }
 
-/* СКРОЛЛИМЫЙ ТЕКСТ */
-.scroll-box {
-    width: 300px;
-    height: 150px;
-    overflow-y: auto;
-    border: 2px solid black;
-    padding: 10px;
-    background-color: white;
-    position: absolute;
-    top: 500px; /* Отрегулируй под нужное положение */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: left;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+/* Новый блок с текстом, который будет визуально в центре контейнера */
+.text-block {
+  position: absolute;
+  width: 80%;
+  max-width: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
 }
