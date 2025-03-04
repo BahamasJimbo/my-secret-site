@@ -1,37 +1,94 @@
-/* Центрирование всей страницы */
+* {
+  box-sizing: border-box;
+}
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0; /* Фон страницы */
+  font-size: 14px;
+}
+.v1_9 {
+  width: 370px;
+  height: 1097px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v1_8 {
+  width: 385px;
+  height: 100%;
+  background: rgba(8,8,8,1);
+  opacity: 1;
+  position: absolute;
+  top: 75px;
+  left: 15px;
+  overflow: hidden;
+}
+.v1_3 {
+  width: 229px;
+  height: 342px;
+  background: url("../images/v1_3.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 406px;
+  left: 0px;
+  overflow: hidden;
+}
+.v1_13 {
+  width: 294px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 324px;
+  left: 0px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 12px;
+  opacity: 1;
+  text-align: left;
+}
+.v2_14 {
+  width: 190px;
+  height: 338px;
+  background: url("../images/v2_14.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 767px;
+  left: 156px;
+  overflow: hidden;
+}
+.v1_11 {
+  width: 316px;
+  height: 104px;
+  background: url("../images/v1_11.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 162px;
+  left: 54px;
+  overflow: hidden;
 }
 
-/* Контейнер для всего содержимого */
-.container {
-    text-align: center;
-}
-
-/* Стили для прокручиваемого окна */
+/* СКРОЛЛИМЫЙ ТЕКСТ */
 .scroll-box {
-    width: 400px; /* Фиксированная ширина */
-    height: 250px; /* Фиксированная высота */
-    overflow-y: auto; /* Включает скролл при необходимости */
+    width: 300px;
+    height: 150px;
+    overflow-y: auto;
     border: 2px solid black;
-    padding: 15px;
+    padding: 10px;
     background-color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
-    text-align: left; /* Текст выравнивается по левому краю */
-    white-space: pre-wrap; /* Учитывает переносы строк */
-    word-wrap: break-word; /* Авто-перенос длинных слов */
-}
-
-/* Стили для текста внутри */
-.scroll-box p {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #333;
-    margin: 0;
+    position: absolute;
+    top: 500px; /* Отрегулируй под нужное положение */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
