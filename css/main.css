@@ -1,90 +1,100 @@
-/* Сбрасываем отступы у body */
-body {
+/* Сбрасываем отступы, настраиваем шрифт, делаем фон */
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   font-family: 'Inter', sans-serif;
-  background: #f0f0f0; /* любой цвет по вкусу */
+  background: #f0f0f0;
 }
 
-/* Обёрточный контейнер, отвечающий за горизонтальную и вертикальную центровку */
-.page-container {
+/* Обёртка, чтобы .v1_9 встала ровно по центру экрана */
+.wrapper {
   display: flex;
-  flex-direction: column;  
-  align-items: center;     
-  justify-content: center; 
-  min-height: 100vh;       /* чтобы занять высоту всего экрана */
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center;     /* Вертикальное центрирование */
+  width: 100%;
+  height: 100vh;           /* Высота экрана */
+  box-sizing: border-box;
 }
 
-/* Контейнер из Figma */
+/* Основной контейнер (аналог frame из Figma),
+   у него фиксированная ширина, но без жёсткой высоты */
 .v1_9 {
+  position: relative;
   width: 370px;
-  /* Желательно убрать фиксированную высоту, чтобы контейнер мог ужаться */
-  /* height: 1097px; */
-  position: relative;  
-  background: rgba(255,255,255,1);
+  min-height: 600px;     /* Можно регулировать */
+  background: #fff;
+  border: 1px solid #ccc;
   overflow: hidden;
 }
 
-/* Ниже стили из вашей фигмы (как были, по необходимости подправьте пути) */
+/* Фоновый блок */
 .v1_8 {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 385px;
   height: 100%;
   background: rgba(8,8,8,1);
-  opacity: 1;
-  position: absolute;
-  top: 75px;
-  left: 15px;
-  overflow: hidden;
 }
+
+/* Картинка v1_3 */
 .v1_3 {
+  position: absolute;
+  top: 406px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 229px;
   height: 342px;
   background: url("../images/v1_3.png") no-repeat center/cover;
-  opacity: 1;
-  position: absolute;
-  top: 406px;
-  left: 0px;
-  overflow: hidden;
 }
+
+/* Текст yoyoyoyoyoy */
 .v1_13 {
-  width: 294px;
-  color: rgba(255,255,255,1);
   position: absolute;
   top: 324px;
-  left: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 294px;
+  color: #fff;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
 }
+
+/* Картинка v2_14 */
 .v2_14 {
+  position: absolute;
+  top: 767px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 190px;
   height: 338px;
   background: url("../images/v2_14.png") no-repeat center/cover;
-  opacity: 1;
-  position: absolute;
-  top: 767px;
-  left: 156px;
-  overflow: hidden;
 }
+
+/* Картинка v1_11 */
 .v1_11 {
+  position: absolute;
+  top: 162px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 316px;
   height: 104px;
   background: url("../images/v1_11.png") no-repeat center/cover;
-  opacity: 1;
-  position: absolute;
-  top: 162px;
-  left: 54px;
-  overflow: hidden;
 }
 
-/* Новый блок с текстом */
+/* Текстовый блок */
 .text-block {
-  position: relative; 
-  margin: 20px;             /* немного отступа сверху/снизу */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* по центру контейнера .v1_9 */
   background: #fff;
   padding: 20px;
   border: 1px solid #ccc;
   text-align: center;
   font-size: 16px;
-  line-height: 1.5;
   color: #000;
 }
