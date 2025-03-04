@@ -1,100 +1,100 @@
-/* Сбрасываем отступы, настраиваем шрифт, делаем фон */
+/* 1) Сбрасываем отступы у html/body, задаём фон на всю страницу */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   font-family: 'Inter', sans-serif;
-  background: #f0f0f0;
+  background: #fff; /* Если нужен белый фон за пределами макета */
 }
 
-/* Обёртка, чтобы .v1_9 встала ровно по центру экрана */
-.wrapper {
+/* 2) Обёртка-центрировщик: 
+      Ставим .v1_9 ровно по центру окна */
+.page-container {
   display: flex;
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center;     /* Вертикальное центрирование */
+  justify-content: center;  /* горизонтальное центрирование */
+  align-items: center;      /* вертикальное центрирование */
   width: 100%;
-  height: 100vh;           /* Высота экрана */
+  height: 100vh;            /* вся высота окна */
   box-sizing: border-box;
 }
 
-/* Основной контейнер (аналог frame из Figma),
-   у него фиксированная ширина, но без жёсткой высоты */
+/* 3) Блок v1_9 — «холст» из Figma */
 .v1_9 {
   position: relative;
-  width: 370px;
-  min-height: 600px;     /* Можно регулировать */
-  background: #fff;
-  border: 1px solid #ccc;
-  overflow: hidden;
+  width: 400px;       /* подберите под себя */
+  height: 700px;      /* тоже подбирается под контент */
+  overflow: hidden;   /* чтобы не торчали части, если оно больше */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* Фоновый блок */
+/* 4) Чёрный фон на всю площадь v1_9 */
 .v1_8 {
   position: absolute;
-  top: 75px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 385px;
-  height: 100%;
-  background: rgba(8,8,8,1);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #000;  /* чёрный */
+  z-index: 1;
 }
 
-/* Картинка v1_3 */
-.v1_3 {
+/* 5) Примеры картинок (центрируем их внутри .v1_9 по горизонтали) */
+.v1_11, .v1_3, .v2_14 {
   position: absolute;
-  top: 406px;
-  left: 50%;
+  left: 50%;             /* центр контейнера */
   transform: translateX(-50%);
-  width: 229px;
-  height: 342px;
-  background: url("../images/v1_3.png") no-repeat center/cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;            /* поверх чёрного фона */
 }
 
-/* Текст yoyoyoyoyoy */
+/* Примерные координаты/размеры (подгоните под желаемый макет) */
+.v1_11 {
+  top: 50px;
+  width: 300px;
+  height: 100px;
+  background-image: url("../images/v1_11.png");
+}
+
+.v1_3 {
+  top: 170px;
+  width: 200px;
+  height: 300px;
+  background-image: url("../images/v1_3.png");
+}
+
+.v2_14 {
+  top: 490px;
+  width: 150px;
+  height: 150px;
+  background-image: url("../images/v2_14.png");
+}
+
+/* 6) Текст yoyoyoyoyoy - тоже по центру */
 .v1_13 {
   position: absolute;
-  top: 324px;
+  z-index: 3;
+  top: 130px;
   left: 50%;
   transform: translateX(-50%);
-  width: 294px;
   color: #fff;
-  font-size: 12px;
-  text-align: center;
+  font-size: 16px;
 }
 
-/* Картинка v2_14 */
-.v2_14 {
-  position: absolute;
-  top: 767px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 190px;
-  height: 338px;
-  background: url("../images/v2_14.png") no-repeat center/cover;
-}
-
-/* Картинка v1_11 */
-.v1_11 {
-  position: absolute;
-  top: 162px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 316px;
-  height: 104px;
-  background: url("../images/v1_11.png") no-repeat center/cover;
-}
-
-/* Текстовый блок */
+/* 7) Маленький прямоугольник с прокруткой */
 .text-block {
   position: absolute;
+  z-index: 4;
+  /* поставим его в центре .v1_9 */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* по центру контейнера .v1_9 */
+  transform: translate(-50%, -50%);
+
+  width: 200px;        /* фиксированная ширина */
+  height: 100px;       /* фиксированная высота */
+  overflow-y: auto;    /* вертикальная прокрутка */
   background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  text-align: center;
-  font-size: 16px;
   color: #000;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
