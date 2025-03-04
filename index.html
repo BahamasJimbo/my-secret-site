@@ -2,31 +2,36 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Центрированный макет</title>
-  <!-- Шрифт + стили -->
+  <title>Центрированная страница</title>
+  <!-- Подключаем шрифт + стили -->
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
   <link href="./css/main.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- Плеер с музыкой -->
+  <!-- Плеер с музыкой. Уберите autoplay, если мешает блокировка в браузере. -->
   <audio controls>
     <source src="music.mp3" type="audio/mp3" />
     Ваш браузер не поддерживает элемент <code>audio</code>.
   </audio>
 
-  <!-- Обёртка, чтобы поставить всё по центру -->
-  <div class="page-container">
-    <!-- «Холст» из Figma -->
+  <!-- Обёртка для горизонтального/вертикального центрирования -->
+  <div class="wrapper">
+    <!-- Основной контейнер из Figma -->
     <div class="v1_9">
-      <!-- Фон (чёрный) на всю площадь v1_9 -->
       <div class="v1_8"></div>
-
-      <!-- Пример: картинки, текст из Figma. Координаты/размеры подгоняйте сами -->
-      <div class="v1_11"></div>   <!-- 1-я картинка -->
-      <div class="v1_3"></div>    <!-- 2-я картинка -->
-      <div class="v2_14"></div>   <!-- 3-я картинка -->
-
-      <!-- Пример простого текста (как «yoyoyoyoyoy») -->
+      <div class="v1_3"></div>
       <span class="v1_13">yoyoyoyoyoy</span>
+      <div class="v2_14"></div>
+      <div class="v1_11"></div>
 
-      <!-- Маленькое «окошко» с прокруткой
+      <!-- Текстовый блок в центре .v1_9 (поверх остальных элементов) -->
+      <div class="text-block">
+        <p>1231313133</p>
+        <p>1231313133</p>
+        <p>1231313133</p>
+        <p>1231313133</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
